@@ -3,11 +3,11 @@
 use crate::state::DesktopState;
 use crate::widgets::icon::launch_entry;
 use crate::widgets::selection::update_icon_sel;
-use babydra_core::{clean_modifiers, matches_key, parse_shortcut};
-use babydra_ui_kit::components::explore::context_menu::clipboard::{
+use babydra_ui_kit::ui::keyboard::{clean_modifiers, matches_key, parse_shortcut};
+use crate::file_manager_ui::context_menu::clipboard::{
     paste_from_clipboard, set_clipboard_files,
 };
-use babydra_ui_kit::components::explore::*;
+use crate::file_manager_ui::*;
 use gtk4::prelude::*;
 use gtk4::{EventControllerKey, Fixed};
 use std::cell::RefCell;

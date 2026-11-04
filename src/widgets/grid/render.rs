@@ -6,7 +6,7 @@ use crate::state::DesktopState;
 use crate::widgets::icon::{create_desktop_icon, launch_entry};
 use crate::widgets::selection::update_icon_sel;
 use babydra_core::models::explore::FileType;
-use babydra_ui_kit::components::explore::context_menu::show_for_file;
+use crate::file_manager_ui::context_menu::show_for_file;
 use gtk4::prelude::*;
 use gtk4::{Box, Fixed, GestureClick};
 use std::cell::{Cell, RefCell};

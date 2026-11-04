@@ -4,7 +4,7 @@ use super::{refresh_nav_cb, update_desktop_config};
 use crate::state::DesktopState;
 use babydra_core::i18n::trans;
 use babydra_ui_kit::components::context_menu::ContextMenuBuilder;
-use babydra_ui_kit::components::explore::*;
+use crate::file_manager_ui::*;
 use gtk4::prelude::*;
 use std::rc::Rc;
 
@@ -193,7 +193,7 @@ pub fn show_empty_menu(
     });
 
     // 10. More... submenu (only if other apps are available)
-    builder = babydra_ui_kit::components::explore::context_menu::append_more_submenu(
+    builder = crate::file_manager_ui::context_menu::append_more_submenu(
         builder,
         &desktop_dir,
     );

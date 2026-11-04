@@ -3,6 +3,7 @@
 mod render;
 pub mod state;
 pub mod widgets;
+mod file_manager_ui;
 
 use gtk4::prelude::*;
 use gtk4::Application;
@@ -40,7 +41,7 @@ fn main() {
 
     app.connect_activate(|app| {
         // Initialize BabyDra theme and styling
-        babydra_ui_kit::ui::theme::init_theme();
+        babydra_ui_kit::ui::theme::init_theme_with_css(include_str!("assets/styles/desktop.css"));
 
         // Apply saved display monitor settings (resolution, refresh rate, orientation)
         babydra_core::services::system::display::apply_saved_displays();
@@ -51,7 +52,7 @@ fn main() {
         // Sync system color-scheme changes (GSettings) to GTK settings in real-time
         let gsettings = gtk4::gio::Settings::new("org.gnome.desktop.interface");
         gsettings.connect_changed(Some("color-scheme"), |_, _| {
-            babydra_ui_kit::ui::theme::init_theme();
+            babydra_ui_kit::ui::theme::init_theme_with_css(include_str!("assets/styles/desktop.css"));
         });
 
         // Build and display desktop window on Wayland Background layer

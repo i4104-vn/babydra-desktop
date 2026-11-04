@@ -1,7 +1,7 @@
 //! Drag and Drop subsystem for Desktop: DragSource, Desktop DropTarget, and Folder DropTarget.
 
 use crate::state::{snap_to_grid, DesktopState};
-use babydra_core::load_cropped_square;
+use babydra_ui_kit::ui::file_preview::load_cropped_square;
 use gtk4::gdk::FileList;
 use gtk4::prelude::*;
 use std::cell::RefCell;
