@@ -1,3 +1,4 @@
+#![allow(unused_imports, dead_code)]
 //! Explore feature components. Import this module with a glob
 //! (`use crate::file_manager_ui::*;`) for the full API surface.
 
